@@ -35,39 +35,39 @@ df_philly_race = df_philly_race.drop(df_philly_race.index[0])
 df_philly_race = df_philly_race.apply(pd.to_numeric)
 
 # #bar graph with race as bins and the number of counts for raw count
-# X = np.array(df_merge_race['complainant_race'].unique()) #
-# Y = df_merge_race['complainant_race'].value_counts()
-# plt.bar(X, Y)
-# plt.title("Raw Number of Reports by Race")
-# plt.xlabel("Race")
-# plt.ylabel("Number of Reports")
-# plt.show()
+X = np.array(df_merge_race['complainant_race'].unique()) #
+Y = df_merge_race['complainant_race'].value_counts()
+plt.bar(X, Y)
+plt.title("Raw Number of Reports by Race")
+plt.xlabel("Race")
+plt.ylabel("Number of Reports")
+plt.show()
 
 # #bar graph wtih raw race as percentage
-# X = np.array(df_merge_race['complainant_race'].unique()) #
-# Y = df_merge_race['complainant_race'].value_counts() / df_merge_race['complainant_race'].value_counts().sum() * 100
-# plt.bar(X, Y)
-# plt.title("Raw Percentage of Reports by Race")
-# plt.xlabel("Race")
-# plt.ylabel("Percent")
-# plt.show()
+X = np.array(df_merge_race['complainant_race'].unique()) #
+Y = df_merge_race['complainant_race'].value_counts() / df_merge_race['complainant_race'].value_counts().sum() * 100
+plt.bar(X, Y)
+plt.title("Raw Percentage of Reports by Race")
+plt.xlabel("Race")
+plt.ylabel("Percent")
+plt.show()
 
 # #bar graph wtih raw race as percentage with 
 # #middle east & multi ethnic as a part of Other
 # #indian part of Asian
-# df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "indian"] = "asian"
-# df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "middle east"] = "other"
-# df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "multi ethnic"] = "other"
-# X = np.array(df_merge_race['complainant_race'].unique()) 
-# Y = df_merge_race['complainant_race'].value_counts() / df_merge_race['complainant_race'].value_counts().sum() * 100
-# plt.bar(X, Y)
-# plt.title("Percentage of Reports by Race")
-# plt.xlabel("Race")
-# plt.ylabel("Percent")
-# plt.show()
+df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "indian"] = "asian"
+df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "middle east"] = "other"
+df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "multi ethnic"] = "other"
+X = np.array(df_merge_race['complainant_race'].unique()) 
+Y = df_merge_race['complainant_race'].value_counts() / df_merge_race['complainant_race'].value_counts().sum() * 100
+plt.bar(X, Y)
+plt.title("Percentage of Reports by Race")
+plt.xlabel("Race")
+plt.ylabel("Percent")
+plt.show()
 
 
-##bar graph with race percentages over time 
+##bar graph with race percentages overall based on ACS 2018 Philadelphia demographics
 ##middle east & multi ethnic as a part of Other
 #indian part of Asian
 df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "indian"] = "asian"
@@ -83,7 +83,7 @@ bar_width = 0.35
 indx = np.arange(len(X))
 fig, ax = plt.subplots()
 barPolice = ax.bar(indx - bar_width/2, Y_police_complaints, bar_width, label='Police Complaints')
-barPhilly = ax.bar(indx + bar_width/2, Y_philly_race, bar_width, label='Philadelphia City')
+barPhilly = ax.bar(indx + bar_width/2, Y_philly_race, bar_width, label='Philadelphia City ACS 2018')
 ax.set_xticks(indx)
 ax.set_xticklabels(X)
 ax.set_xlabel("Race")
