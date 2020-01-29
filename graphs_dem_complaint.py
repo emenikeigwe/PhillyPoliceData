@@ -73,12 +73,18 @@ plt.show()
 df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "indian"] = "asian"
 df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "middle east"] = "other"
 df_merge_race['complainant_race'][df_merge_race['complainant_race'] == "multi ethnic"] = "other"
-X = np.array(df_merge_race['complainant_race'].unique()) 
+X = np.array(df_merge_race['complainant_race'].unique())
+for num in range(len(X)):
+    X[num] = X[num].capitalize()
 Y_police_complaints = df_merge_race['complainant_race'].value_counts() / df_merge_race['complainant_race'].value_counts().sum() * 100
 #taking philly race data and applying to races from police data
 Y_philly_race = np.array(list([df_philly_race.iloc[0]['Not Hispanic or Latino!!Black or African American alone'], df_philly_race.iloc[0]['Not Hispanic or Latino!!White alone'],\
      0, df_philly_race.iloc[0]['Hispanic or Latino (of any race)'], df_philly_race.iloc[0]['Not Hispanic or Latino!!Asian alone'], \
     df_philly_race.iloc[0]['Not Hispanic or Latino!!Native Hawaiian and Other Pacific Islander alone'] + df_philly_race.iloc[0]['Not Hispanic or Latino!!Two or more races']]))
+diff = Y_police_complaints - Y_philly_race
+percent_out = { "race" : X, "philly_race" : Y_philly_race, "police_race" : Y_police_complaints, "diff" : diff}
+df_percent = pd.DataFrame(percent_out, columns = [ "race", "philly_race", "police_race", "diff"])
+df_percent.to_csv("race_percent.csv")
 bar_width = 0.35
 indx = np.arange(len(X))
 fig, ax = plt.subplots()

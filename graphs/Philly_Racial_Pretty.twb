@@ -1,0 +1,524 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.20.0119.2058                               -->
+<workbook original-version='18.1' source-build='2019.4.2 (20194.20.0119.2058)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='race_percent' inline='true' name='federated.0ne0k7w0ku99ml16e8f7h0pyjxwt' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='race_percent' name='textscan.1l1tn1803bspzw1ezj1f01lj29b8'>
+            <connection class='textscan' directory='/Users/ameliadogan/Documents/GitHub/PhillyPoliceData' filename='race_percent.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='race_percent (2)' name='textscan.1qi6p9217wq3s20zmmsyg0tjntzn'>
+            <connection class='textscan' directory='/Users/ameliadogan/Documents/GitHub/PhillyPoliceData' filename='race_percent.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1qi6p9217wq3s20zmmsyg0tjntzn' name='race_percent.csv' table='[race_percent#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='string' name='F1' ordinal='0' />
+            <column datatype='string' name='race' ordinal='1' />
+            <column datatype='real' name='philly_race' ordinal='2' />
+            <column datatype='real' name='police_race' ordinal='3' />
+            <column datatype='real' name='diff' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[race_percent.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[race_percent.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>race</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[race]</local-name>
+            <parent-name>[race_percent.csv]</parent-name>
+            <remote-alias>race</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>philly_race</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[philly_race]</local-name>
+            <parent-name>[race_percent.csv]</parent-name>
+            <remote-alias>philly_race</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>police_race</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[police_race]</local-name>
+            <parent-name>[race_percent.csv]</parent-name>
+            <remote-alias>police_race</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>diff</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[diff]</local-name>
+            <parent-name>[race_percent.csv]</parent-name>
+            <remote-alias>diff</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='no' datatype='string' name='[F1]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Perecent Difference' datatype='real' name='[diff]' role='measure' type='quantitative' />
+      <column caption='Race' datatype='string' name='[race]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.466989' measure-ordering='alphabetic' measure-percentage='0.533011' rowDisplayCount='6' show-hidden-fields='true' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <field-sort-info field-sort-order-type='alphabetical-order' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Rockwell'>Difference Between Philadelphia City &amp; </run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontname='Rockwell'>Police Complaint Racial Demographics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='race_percent' name='federated.0ne0k7w0ku99ml16e8f7h0pyjxwt' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ne0k7w0ku99ml16e8f7h0pyjxwt'>
+            <column caption='Perecent Difference' datatype='real' name='[diff]' role='measure' type='quantitative' />
+            <column-instance column='[race]' derivation='None' name='[none:race:nk]' pivot='key' type='nominal' />
+            <column caption='Race' datatype='string' name='[race]' role='dimension' type='nominal' />
+            <column-instance column='[diff]' derivation='Sum' name='[sum:diff:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[none:race:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:race:nk]' />
+              <groupfilter function='member' level='[none:race:nk]' member='&quot;None&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[none:race:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[sum:diff:qk]' field-type='quantitative' max='20.5' min='-15.0' minor-show='false' range-type='fixed' scope='rows' type='space' />
+            <format attr='stroke-size' scope='cols' value='2' />
+            <format attr='tick-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='vertical-align' data-class='subtotal' scope='cols' value='auto' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='vertical-align' data-class='subtotal' scope='cols' value='top' />
+            <format attr='band-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='band-color' scope='cols' value='#00000000' />
+            <format attr='background-color' data-class='total' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='cols' value='1' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-family' value='Rockwell' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' scope='cols' value='5' />
+            <format attr='stroke-color' scope='cols' value='#000000' />
+            <format attr='stroke-size' scope='rows' value='2' />
+            <format attr='stroke-color' scope='rows' value='#000000a5' />
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-visibility' scope='cols' value='on' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='5' />
+            <format attr='stroke-color' scope='cols' value='#000000' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='font-family' value='Rockwell' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='font-family' value='Rockwell' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <reference-line axis-column='[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[sum:diff:qk]' enable-instant-analytics='true' formula='constant' id='refline0' label-type='none' scope='per-table' value='0.0' value-column='[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[sum:diff:qk]' z-order='1' />
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='wrap' value='on' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-family' value='Rockwell' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='1.0544751882553101' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#b07aa1' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#835e80' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[sum:diff:qk]</rows>
+        <cols>[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[none:race:nk]</cols>
+      </table>
+      <simple-id uuid='{9C7C7774-52E5-4C70-A6CF-027FA563D0A8}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Rockwell'>Difference Between City Racial Demographics</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontname='Rockwell'> &amp; Police Complaints</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='race_percent' name='federated.0ne0k7w0ku99ml16e8f7h0pyjxwt' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0ne0k7w0ku99ml16e8f7h0pyjxwt'>
+            <column caption='no' datatype='string' name='[F1]' role='dimension' type='nominal' />
+            <column caption='Perecent Difference' datatype='real' name='[diff]' role='measure' type='quantitative' />
+            <column-instance column='[F1]' derivation='None' name='[none:F1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[diff]' derivation='Sum' name='[sum:diff:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='font-family' value='Rockwell' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='font-family' value='Rockwell' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='font-family' value='Rockwell' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <reference-line axis-column='[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[sum:diff:qk]' enable-instant-analytics='true' formula='constant' id='refline0' label-type='automatic' scope='per-table' value='0.0' value-column='[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[sum:diff:qk]' z-order='1' />
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-family' value='Lucida Grande' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='0.790607750415802' />
+                <format attr='mark-color' value='#a45aa7' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[sum:diff:qk]</rows>
+        <cols>[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[none:F1:nk]</cols>
+      </table>
+      <simple-id uuid='{C5AD384A-E112-49BF-8BD5-D5A325B85F0B}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[none:F1:nk]</field>
+            <field>[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[none:race:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{030F8229-360E-42D3-AE64-73C24F1B32D1}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0ne0k7w0ku99ml16e8f7h0pyjxwt].[none:F1:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{61951860-9461-4352-913A-BEA0558D41B8}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
